@@ -30,7 +30,7 @@ public class ItemEnchUpgrade extends ItemMeta {
 	@Override
 	public String getItemStackDisplayName(ItemStack stack) {
 		String ench = I18n.translateToLocal(this.enchant.getName());
-		return (stack.getItemDamage() > 0 ? "Elite " + ench : ench) + " Upgrade";
+		return (stack.getItemDamage() > 0 ? "Mejora: " + ench : ench) + " avanzada";
 	}
 
 	/** Add the info */
@@ -38,9 +38,9 @@ public class ItemEnchUpgrade extends ItemMeta {
 	@Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		int tier = stack.getItemDamage();
-		tooltip.add("Upgrades to " + I18n.translateToLocal(enchant.getName()));
+		tooltip.add("Mejora a " + I18n.translateToLocal(enchant.getName()));
 		if(!single) {
-			tooltip.add("Tiers " + (tier * enchant.getMaxLevel() + 1) + " - " + (tier + 1) * enchant.getMaxLevel());
+			tooltip.add("Niveles " + (tier * enchant.getMaxLevel() + 1) + " - " + (tier + 1) * enchant.getMaxLevel());
 		}
 	}
 	
